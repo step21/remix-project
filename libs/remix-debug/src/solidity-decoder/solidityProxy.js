@@ -97,12 +97,9 @@ class SolidityProxy {
     */
   extractStateVariablesAt (vmtraceIndex) {
     return new Promise((resolve, reject) => {
-      this.contractNameAt(vmtraceIndex, (error, contractName) => {
-        if (error) {
-          return reject(error)
-        }
-        return resolve(this.extractStateVariables(contractName))
-      })
+      this.contractNameAt(vmtraceIndex).then((contractName) => {
+        resolve(this.extractStateVariables(contractName))
+      }).catch(reject)
     })
   }
 
