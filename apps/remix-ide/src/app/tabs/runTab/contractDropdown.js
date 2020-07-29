@@ -98,7 +98,7 @@ class ContractDropdownUI {
       data-id="contractDropdownIpfsCheckbox"
       class="form-check-input custom-control-input"
       type="checkbox"
-      onchange=${() => this.toggleCheckedState.bind()}
+      onchange=${() => this.toggleCheckedState()}
       >
     `
     if (this.ipfsCheckedState) this.ipfsCheckbox.checked = true
